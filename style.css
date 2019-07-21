@@ -1,0 +1,146 @@
+
+* {
+	margin: 0;
+	padding: 0;
+}
+html,body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	background-color: antiquewhite;
+}
+#catchBox {
+
+	
+	position: absolute;
+	transform: translateX(-50%);
+	bottom: 0%;
+	left: 0;
+	transition: all .4s;
+
+}
+
+#fruit {
+
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: green;
+	position:absolute;
+	top: -50px;
+	left: 30%;
+	transition: all .4s;
+}
+
+body {
+	margin: 0;
+	color: #444;
+	background-color: #141414;
+	font: 300 18px/18px Roboto, sans-serif;
+}
+
+*,
+:after,
+:before {
+	box-sizing: border-box
+}
+
+.pull-left {
+	float: left
+}
+
+.pull-right {
+	float: right
+}
+
+.clearfix:after,
+.clearfix:before {
+	content: '';
+	display: table
+}
+
+.clearfix:after {
+	clear: both;
+	display: block
+}
+
+.loader-wrap {
+	top: 50%;
+	left: 50%;
+	width: 374px;
+	height: 194px;
+	position: fixed;
+	margin-top: -97px;
+	margin-left: -187px;
+}
+
+
+
+
+
+
+
+
+
+.bottle {
+	bottom: 0;
+	/* width: 40px; */
+	/* text-align: center; */
+	position: absolute;
+	/* display: inline-block; */
+	/* vertical-align: bottom; */
+	/* transform-origin: bottom right; */
+}
+.bottle svg {
+	height: 423px;
+	width: 115px;
+}
+.bottle:before,
+.bottle:after {
+	left: 50%;
+	content: '';
+	position: absolute;
+	background-color: #fce480;
+}
+
+
+
+.bottle:after {
+	top: 0;
+	height: 23px;
+	width: 52px;
+	/* margin-left: -8px; */
+	border-radius: 4px;
+	animation: show-cap 2500ms linear infinite;
+	left: 50%;
+	position: absolute;
+	transform: translateX(-50%);
+}
+
+.bottle-fill {
+	transition: 2s;
+	animation:fill 2500ms infinite forwards;
+	height: 0;
+		y: 125px
+}
+
+
+
+.bottle-fill.active {
+	height: 100px;
+		y: 25px
+}
+/*
+@keyframes fill {
+	0% {
+		height: 0;
+		y: 125px
+	}
+
+	100% {
+		height: 100px;
+		y: 25px
+	}
+}
+*/
+
