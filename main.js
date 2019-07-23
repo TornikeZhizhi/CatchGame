@@ -3,6 +3,7 @@
 var catchBox = document.getElementById('catchBox');
 var svg = document.querySelector("#catchBox svg")
 var fruit = document.getElementById('fruit');
+var fruit2 = document.getElementById('fruit2');
 
 
 
@@ -21,15 +22,17 @@ var offsetTop = catchBox.offsetTop
 
 var moveDown = 0;
 var LeftPoz = Math.floor(Math.random() * 95);
+var LeftPoz2 = Math.floor(Math.random() * 95);
 fruit.style.left = LeftPoz + '%';
+fruit2.style.left = LeftPoz2 + '%';
 
 
-var x = 0;
+var Cocktail = 83;
 
 setInterval(function(){
 
-
-	if (moveDown > offsetTop) {
+	
+	if (moveDown > offsetTop && moveDown < offsetTop + 20) {
 		if (LeftPoz == y || LeftPoz == y + 1 
 
 			|| LeftPoz == y + 2 || LeftPoz == y + 3
@@ -39,21 +42,38 @@ setInterval(function(){
 			|| LeftPoz == y - 5
 			) {
 			
-				
-			x++;
-		console.log(x)
+			document.getElementsByClassName('bottle-fill')[0].style.y = Cocktail + 'px';	
+			Cocktail -= 5;
 			fruit.style.display = 'none';
+			fruit2.style.display = 'none';
 				 moveDown = 0;
 				fruit.style.top = LeftPoz + '-50px';
+				fruit2.style.top = LeftPoz2 + '-50px';
 
 			setTimeout (function(){
 				LeftPoz = Math.floor(Math.random() * 95);
+				LeftPoz2 = Math.floor(Math.random() * 95);
 		
 				fruit.style.display = 'block';
+				fruit2.style.display = 'block';
 			},300)
 			return;
 		
 		}
+	}
+
+	if (moveDown > offsetTop + 20) {
+		fruit.style.display = 'none';
+		fruit2.style.display = 'none';
+				 moveDown = 0;
+
+				 setTimeout (function(){
+				LeftPoz = Math.floor(Math.random() * 95);
+				LeftPoz2 = Math.floor(Math.random() * 95);
+		
+				fruit.style.display = 'block';
+				fruit2.style.display = 'block';
+			},300)
 	}
 
 	
@@ -64,7 +84,9 @@ setInterval(function(){
 
 
 	fruit.style.top = moveDown + 'px';
+	fruit2.style.top = moveDown + 'px';
 	fruit.style.left = LeftPoz + '%';
+	fruit2.style.left = LeftPoz2 + '%';
 	moveDown += 10;
 
 

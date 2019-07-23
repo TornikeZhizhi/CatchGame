@@ -32,6 +32,18 @@ html,body {
 	transition: all .4s;
 }
 
+#fruit2 {
+
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: green;
+	position:absolute;
+	top: -50px;
+	left: 30%;
+	transition: all .4s;
+}
+
 body {
 	margin: 0;
 	color: #444;
@@ -120,8 +132,8 @@ body {
 .bottle-fill {
 	transition: 2s;
 	animation:fill 2500ms infinite forwards;
-	height: 0;
-		y: 125px
+	height: 93px;
+    y: 87px;
 }
 
 
