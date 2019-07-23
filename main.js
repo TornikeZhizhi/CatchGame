@@ -24,6 +24,7 @@ var LeftPoz = Math.floor(Math.random() * 95);
 fruit.style.left = LeftPoz + '%';
 
 
+var x = 0;
 
 setInterval(function(){
 
@@ -38,7 +39,19 @@ setInterval(function(){
 			|| LeftPoz == y - 5
 			) {
 			
-			
+				
+			x++;
+		console.log(x)
+			fruit.style.display = 'none';
+				 moveDown = 0;
+				fruit.style.top = LeftPoz + '-50px';
+
+			setTimeout (function(){
+				LeftPoz = Math.floor(Math.random() * 95);
+		
+				fruit.style.display = 'block';
+			},300)
+			return;
 		
 		}
 	}
