@@ -40,8 +40,16 @@ setInterval(function(){
 		
 			) {
 			audio.play()
-			document.getElementsByClassName('bottle-fill')[0].style.y = Cocktail + 'px';	
-			Cocktail -= 5;
+			document.getElementsByClassName('bottle-fill')[0].style.y = Cocktail + 'px';
+			console.log(document.getElementsByClassName('bottle-fill')[0].style.y)	
+
+
+			if (document.getElementsByClassName('bottle-fill')[0].style.y == '8px') {
+
+				document.getElementById('win').style.display = 'flex';
+				fruit.style.display = 'none';
+			}
+			Cocktail -= 15;
 			fruit.style.display = 'none';
 				 moveDown = -100;
 				fruit.style.top = LeftPoz + '-50px';
@@ -104,3 +112,13 @@ window.addEventListener('mousemove',function(event){
 
 
 var audio = new Audio("img/Pouring.mp3" );
+
+
+
+document.getElementById('again').addEventListener('click',function(){
+	document.getElementById('win').style.display = 'none'
+	moveDown = -120;
+	fruit.style.display = 'block';
+	Cocktail = 83;
+	document.getElementsByClassName('bottle-fill')[0].style.y = Cocktail + 'px';
+})
